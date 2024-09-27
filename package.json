@@ -1,0 +1,21 @@
+{
+  "name": "programacionbackend-modulo-1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/app.js",
+  "type": "module",
+  "scripts": {
+    "start": "nodemon ./src/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "express": "^4.21.0"
+  },
+  "dependencies": {
+    "multer": "^1.4.5-lts.1",
+    "nodemon": "^3.1.4"
+  }
+}

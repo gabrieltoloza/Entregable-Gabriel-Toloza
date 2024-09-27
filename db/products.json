@@ -1,0 +1,80 @@
+[
+    {
+        "id": 4,
+        "title": "Parlantes",
+        "description": "Parlantes JBL negros",
+        "code": "jj8pos",
+        "price": 150.44,
+        "stock": 49,
+        "category": "audio",
+        "thumbnails": [
+            "./public/parlanteJBL.png"
+        ],
+        "status": true
+    },
+    {
+        "id": 6,
+        "title": "Audiculares Logitech",
+        "description": "Audiculares inalambricos color rojo",
+        "code": "55ss84",
+        "price": 70,
+        "stock": 13,
+        "category": "audio",
+        "thumbnails": [
+            "./public/audiculares.png"
+        ],
+        "status": true
+    },
+    {
+        "id": 7,
+        "title": "Soporte Laptop Logitech",
+        "description": "Soporte para laptop marca Logitech color gris.",
+        "code": "sdf741",
+        "price": 45,
+        "stock": 64,
+        "category": "accesorios",
+        "thumbnails": [
+            "./public/soporteLaptop.png"
+        ],
+        "status": true
+    },
+    {
+        "id": 8,
+        "title": "Silla Gamer",
+        "description": "Silla Gamer Ortopedica Logitech",
+        "code": "525slo",
+        "price": 250,
+        "stock": 7,
+        "category": "setup",
+        "thumbnails": [
+            "./public/sillaMedica.png"
+        ],
+        "status": true
+    },
+    {
+        "id": 9,
+        "title": "Apoya Mouse Fortine",
+        "description": "Apoya Mouse Fortine color rosa 10x15cm",
+        "code": "158sok",
+        "price": 7,
+        "status": true,
+        "category": "accesorios",
+        "thumbnails": [
+            "./public/ApoyamouseFortine.png"
+        ],
+        "stock": 750
+    },
+    {
+        "id": 10,
+        "title": "Motorola G32",
+        "description": "Ram 8, 150gb almacenamiento",
+        "code": "juk815",
+        "price": 300,
+        "stock": 35,
+        "category": "tecnologia",
+        "thumbnails": [
+            "./public/motorolag32.png"
+        ],
+        "status": true
+    }
+]

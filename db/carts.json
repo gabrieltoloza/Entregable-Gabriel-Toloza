@@ -1,0 +1,67 @@
+[
+    {
+        "cartID": 1,
+        "product": [
+            {
+                "id": 6,
+                "quantity": 1
+            },
+            {
+                "id": 9,
+                "quantity": 2
+            },
+            {
+                "id": 10,
+                "quantity": 7
+            }
+        ]
+    },
+    {
+        "cartID": 2,
+        "product": [
+            {
+                "id": 10,
+                "quantity": 5
+            },
+            {
+                "id": 8,
+                "quantity": 4
+            },
+            {
+                "id": 7,
+                "quantity": 2
+            }
+        ]
+    },
+    {
+        "cartID": 3,
+        "product": [
+            {
+                "id": 6,
+                "quantity": 4
+            },
+            {
+                "id": 10,
+                "quantity": 4
+            }
+        ]
+    },
+    {
+        "cartID": 4,
+        "product": [
+            {
+                "id": 8,
+                "quantity": 2
+            }
+        ]
+    },
+    {
+        "cartID": 5,
+        "product": [
+            {
+                "id": 10,
+                "quantity": 5
+            }
+        ]
+    }
+]

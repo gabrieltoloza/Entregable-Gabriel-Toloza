@@ -1,0 +1,55 @@
+### GET products
+GET http://127.0.0.1:8080/api/products
+
+
+
+### GET con "req.query" para filtrar por categoria.
+GET http://127.0.0.1:8080/api/products?category=accesorios
+
+
+
+### GET con "req.params" / getProductById()
+GET http://127.0.0.1:8080/api/products/10
+
+
+
+### POST - Agregar nuevo producto
+POST http://127.0.0.1:8080/api/products
+Content-Type: application/json
+
+{
+    "title": "Cable HDMI",
+    "decription": "Cable HDMI, largo 1/2 metro color negro marca logitech",
+    "code": "stb789",
+    "price": 20,
+    "stock": 100, 
+    "category": "accesorios"
+}
+### MODIFICAR EL BODY PARA PROBARLO
+### MODIFICAR EL BODY PARA PROBARLO
+### MODIFICAR EL BODY PARA PROBARLO
+
+
+
+
+### PUT - Actualizar productos
+PUT http://127.0.0.1:8080/api/products/4
+Content-Type: application/json
+
+{
+    "description": "Parlantes JBL negros",
+    "price": 150.44,
+    "stock": 49
+}
+### MODIFICAR EL BODY PARA PROBARLO
+### MODIFICAR EL BODY PARA PROBARLO
+### MODIFICAR EL BODY PARA PROBARLO
+
+
+
+
+### DELETE - Borrar producto
+DELETE http://127.0.0.1:8080/api/products/11
+
+### MODIFICAR EL "params" PARA PROBARLO
+### MODIFICAR EL "params" PARA PROBARLO

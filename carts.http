@@ -1,0 +1,28 @@
+
+### GET - Se puede usar para saber que recursos hay en el endpoint, mas adelante 
+###        podria agregarse un middleware para que solo sea consumido por desarrolladores 
+###         o administradores.
+GET http://127.0.0.1:8080/api/carts/
+
+
+
+
+### GET - by ID
+GET http://127.0.0.1:8080/api/carts/1
+
+
+
+### POST - Create New Empty Order
+POST http://127.0.0.1:8080/api/carts/
+
+
+
+
+### POST - Agregar productos al carrito existente
+POST http://127.0.0.1:8080/api/carts/5/product/10
+Content-Type: application/json
+
+{
+    "quantity": 5
+}
+

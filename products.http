@@ -8,6 +8,13 @@ GET http://127.0.0.1:8080/api/products?category=accesorios
 
 
 
+
+### GET con "req.query" para hacer una paginacion
+GET http://127.0.0.1:8080/api/products?start=0&limit=2
+
+
+
+
 ### GET con "req.params" / getProductById()
 GET http://127.0.0.1:8080/api/products/10
 

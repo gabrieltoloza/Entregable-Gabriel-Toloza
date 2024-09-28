@@ -76,5 +76,70 @@
             "./public/motorolag32.png"
         ],
         "status": true
+    },
+    {
+        "id": 11,
+        "title": "Teclado Mecánico",
+        "description": "Teclado mecánico retroiluminado RGB",
+        "code": "tkm123",
+        "price": 85.99,
+        "stock": 25,
+        "category": "accesorios",
+        "thumbnails": [
+            "./public/tecladoMecanico.png"
+        ],
+        "status": true
+    },
+    {
+        "id": 12,
+        "title": "Mouse Gamer",
+        "description": "Mouse gamer con 7 botones programables",
+        "code": "msg456",
+        "price": 45.5,
+        "stock": 40,
+        "category": "accesorios",
+        "thumbnails": [
+            "./public/mouseGamer.png"
+        ],
+        "status": true
+    },
+    {
+        "id": 13,
+        "title": "Monitor 4K",
+        "description": "Monitor 4K UHD de 27 pulgadas",
+        "code": "mnk789",
+        "price": 399.99,
+        "stock": 15,
+        "category": "tecnologia",
+        "thumbnails": [
+            "./public/monitor4k.png"
+        ],
+        "status": true
+    },
+    {
+        "id": 14,
+        "title": "Cámara Web HD",
+        "description": "Cámara web HD 1080p con micrófono integrado",
+        "code": "cwh101",
+        "price": 60,
+        "stock": 50,
+        "category": "tecnologia",
+        "thumbnails": [
+            "./public/camaraWebHD.png"
+        ],
+        "status": true
+    },
+    {
+        "id": 15,
+        "title": "Auriculares Bluetooth",
+        "description": "Auriculares Bluetooth con cancelación de ruido",
+        "code": "abn202",
+        "price": 120.75,
+        "stock": 30,
+        "category": "audio",
+        "thumbnails": [
+            "./public/auricularesBluetooth.png"
+        ],
+        "status": true
     }
 ]

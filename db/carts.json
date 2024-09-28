@@ -60,8 +60,21 @@
         "product": [
             {
                 "id": 10,
+                "quantity": 10
+            }
+        ]
+    },
+    {
+        "cartID": 6,
+        "product": [
+            {
+                "id": 10,
                 "quantity": 5
             }
         ]
+    },
+    {
+        "cartID": 7,
+        "product": []
     }
 ]

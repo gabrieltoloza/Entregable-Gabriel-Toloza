@@ -1,0 +1,406 @@
+<div>
+    {{#if auth}}
+
+    <body class="font-poppins antialiased">
+        <div id="view" class="h-full w-full flex flex-row overflow-hidden" x-data="{ sidenav: true }">
+            <button @click="sidenav = true"
+                class="p-2 border-2 bg-white rounded-md border-gray-200 shadow-lg text-gray-500 focus:bg-teal-500 focus:outline-none focus:text-white absolute top-0 left-0 sm:hidden">
+                <svg class="w-5 h-5 fill-current" fill="currentColor" viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd"
+                        d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                        clip-rule="evenodd"></path>
+                </svg>
+            </button>
+            <div id="sidebar"
+                class="bg-white h-screen md:block shadow-xl px-3 w-30 md:w-60 lg:w-60 overflow-x-hidden transition-transform duration-300 ease-in-out"
+                x-show="sidenav" @click.away="sidenav = false">
+                <div class="space-y-6 md:space-y-10 mt-10">
+                    <div id="profile" class="space-y-3">
+                        <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
+                            alt="Avatar user" class="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 xl:w-28 xl:h-28 rounded-full mx-auto" />
+                        <div>
+                            <h2 class="font-medium text-xs md:text-sm text-center text-teal-500">
+                                {{name}} {{lastName}}
+                            </h2>
+                            <p class="text-xs text-gray-500 text-center">{{role}} </p>
+                        </div>
+                    </div>
+                    <div class="flex border-2 border-gray-200 rounded-md focus-within:ring-2 ring-teal-500">
+                        <input type="text"
+                            class="w-full rounded-tl-md rounded-bl-md px-2 py-3 text-sm text-gray-600 focus:outline-none"
+                            placeholder="Search" />
+                        <button class="rounded-tr-md rounded-br-md px-2 py-3 hidden md:block">
+                            <svg class="w-4 h-4 fill-current" fill="currentColor" viewBox="0 0 20 20"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    <div id="menu" class="flex flex-col space-y-1">
+                        <a href=""
+                            class="text-sm font-medium text-gray-700 py-2 px-2 hover:bg-teal-500 hover:text-white hover:text-base rounded-md transition duration-150 ease-in-out">
+                            <svg class="w-6 h-6 fill-current inline-block" fill="currentColor" viewBox="0 0 20 20"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M5 3a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V5a2 2 0 00-2-2H5zM5 11a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2H5zM11 5a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V5zM11 13a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z">
+                                </path>
+                            </svg>
+                            <span class="">Dashboard</span>
+                        </a>
+                        <a href=""
+                            class="text-sm font-medium text-gray-700 py-2 px-2 hover:bg-teal-500 hover:text-white hover:scale-105 rounded-md transition duration-150 ease-in-out">
+                            <svg class="w-6 h-6 fill-current inline-block" fill="currentColor" viewBox="0 0 20 20"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M2 5a2 2 0 012-2h7a2 2 0 012 2v4a2 2 0 01-2 2H9l-3 3v-3H4a2 2 0 01-2-2V5z">
+                                </path>
+                                <path
+                                    d="M15 7v2a4 4 0 01-4 4H9.828l-1.766 1.767c.28.149.599.233.938.233h2l3 3v-3h2a2 2 0 002-2V9a2 2 0 00-2-2h-1z">
+                                </path>
+                            </svg>
+                            <span class="">Messages</span>
+                        </a>
+                        <a href=""
+                            class="text-sm font-medium text-gray-700 py-2 px-2 hover:bg-teal-500 hover:text-white hover:scale-105 rounded-md transition duration-150 ease-in-out">
+                            <svg class="w-6 h-6 fill-current inline-block" fill="currentColor" viewBox="0 0 20 20"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="">Calendar</span>
+                        </a>
+                        <a href=""
+                            class="text-sm font-medium text-gray-700 py-2 px-2 hover:bg-teal-500 hover:text-white hover:scale-105 rounded-md transition duration-150 ease-in-out">
+                            <svg class="w-6 h-6 fill-current inline-block" fill="currentColor" viewBox="0 0 20 20"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="">Table</span>
+                        </a>
+                        <a href=""
+                            class="text-sm font-medium text-gray-700 py-2 px-2 hover:bg-teal-500 hover:text-white hover:scale-105 rounded-md transition duration-150 ease-in-out">
+                            <svg class="w-6 h-6 fill-current inline-block" fill="currentColor" viewBox="0 0 20 20"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z">
+                                </path>
+                            </svg>
+                            <span class="">Users</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+
+            {{!-- Intentar armar el chat app aqui --}}
+            {{!-- Intentar armar el chat app aqui --}}
+            {{!-- Intentar armar el chat app aqui --}}
+
+
+
+            <div id="section-app" class="flex-1 overflow-x-hidden overflow-y-auto max-h-screen max-x-full p-4">
+
+                <div class="chat chat-start">
+                    <div class="chat-image avatar">
+                        <div class="w-10 rounded-full">
+                            <img alt="Tailwind CSS chat bubble component"
+                                src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
+                        </div>
+                    </div>
+                    <div class="chat-header">
+                        Obi-Wan Kenobi
+                        <time class="text-xs opacity-50">12:45</time>
+                    </div>
+                    <div class="chat-bubble">You were the Chosen One!</div>
+                    <div class="chat-footer opacity-50">Delivered</div>
+                </div>
+                <div class="chat chat-end">
+                    <div class="chat-image avatar">
+                        <div class="w-10 rounded-full">
+                            <img alt="Tailwind CSS chat bubble component"
+                                src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
+                        </div>
+                    </div>
+                    <div class="chat-header">
+                        Anakin
+                        <time class="text-xs opacity-50">12:46</time>
+                    </div>
+                    <div class="chat-bubble">I hate you!</div>
+                    <div class="chat-footer opacity-50">Seen at 12:46</div>
+                </div>
+                <div class="chat chat-start">
+                    <div class="chat-image avatar">
+                        <div class="w-10 rounded-full">
+                            <img alt="Tailwind CSS chat bubble component"
+                                src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
+                        </div>
+                    </div>
+                    <div class="chat-header">
+                        Obi-Wan Kenobi
+                        <time class="text-xs opacity-50">12:45</time>
+                    </div>
+                    <div class="chat-bubble">You were the Chosen One!</div>
+                    <div class="chat-footer opacity-50">Delivered</div>
+                </div>
+                <div class="chat chat-end">
+                    <div class="chat-image avatar">
+                        <div class="w-10 rounded-full">
+                            <img alt="Tailwind CSS chat bubble component"
+                                src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
+                        </div>
+                    </div>
+                    <div class="chat-header">
+                        Anakin
+                        <time class="text-xs opacity-50">12:46</time>
+                    </div>
+                    <div class="chat-bubble">I hate you!</div>
+                    <div class="chat-footer opacity-50">Seen at 12:46</div>
+                </div>
+                <div class="chat chat-start">
+                    <div class="chat-image avatar">
+                        <div class="w-10 rounded-full">
+                            <img alt="Tailwind CSS chat bubble component"
+                                src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
+                        </div>
+                    </div>
+                    <div class="chat-header">
+                        Obi-Wan Kenobi
+                        <time class="text-xs opacity-50">12:45</time>
+                    </div>
+                    <div class="chat-bubble">You were the Chosen One!</div>
+                    <div class="chat-footer opacity-50">Delivered</div>
+                </div>
+                <div class="chat chat-end">
+                    <div class="chat-image avatar">
+                        <div class="w-10 rounded-full">
+                            <img alt="Tailwind CSS chat bubble component"
+                                src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
+                        </div>
+                    </div>
+                    <div class="chat-header">
+                        Anakin
+                        <time class="text-xs opacity-50">12:46</time>
+                    </div>
+                    <div class="chat-bubble">I hate you!</div>
+                    <div class="chat-footer opacity-50">Seen at 12:46</div>
+                </div>
+
+                {{!-- INPUT del chat-app --}}
+                {{!-- INPUT del chat-app --}}
+                <div id="container-input" class="flex flex-row items-center h-16 rounded-xl bg-white w-full px-4 mt-2 border-2 border-black">
+                    <div>
+                        <label class="flex items-center justify-center text-gray-400 hover:text-gray-600">
+                            <input type="file" class="hidden" />
+                            <svg type="file" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15.172 7l-6.586 6.586a2 2 0 102.828 2.828l6.414-6.586a4 4 0 00-5.656-5.656l-6.415 6.585a6 6 0 108.486 8.486L20.5 13">
+                                </path>
+                            </svg>
+                        </label>
+                    </div>
+                    <div class="flex-grow ml-4">
+                        <div class="relative w-full">
+                            <input id="input-chat" type="text"
+                                class="flex w-full border-2 rounded-xl focus:outline-none focus:border-indigo-300 pl-4 h-10" />
+                            <label
+                                class="absolute flex items-center justify-center h-full w-12 right-0 top-0 text-gray-400 hover:text-gray-600">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="ml-4">
+                        <button
+                            id="btn-chat"
+                            class="flex items-center justify-center bg-indigo-500 hover:bg-indigo-600 rounded-xl text-white px-4 py-1 flex-shrink-0">
+                            <span>Send</span>
+                            <span class="ml-2">
+                                <svg class="w-4 h-4 transform rotate-45 -mt-px" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
+                                </svg>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+            {{!-- Seccion historial chat --}}
+            {{!-- Seccion historial chat --}}
+            {{!-- Seccion historial chat --}}
+
+            <div class="w-1/4 border flex flex-col">
+            
+                <!-- Search -->
+                <div class="py-2 px-2 bg-grey-lightest">
+                    <input type="text" class="w-full px-2 py-2 text-sm" placeholder="Search or start new chat" />
+                </div>
+            
+                <!-- Contacts -->
+                <div class="bg-grey-lighter flex-1 overflow-auto">
+                    <div class="px-3 flex items-center bg-grey-light cursor-pointer">
+                        <div>
+                            <img class="h-12 w-12 rounded-full"
+                                src="https://darrenjameseeley.files.wordpress.com/2014/09/expendables3.jpeg" />
+                        </div>
+                        <div class="ml-4 flex-1 border-b border-grey-lighter py-4">
+                            <div class="flex items-bottom justify-between">
+                                <p class="text-grey-darkest">
+                                    Silverter Stalone
+                                </p>
+                                <p class="text-xs text-grey-darkest">
+                                    12:45 pm
+                                </p>
+                            </div>
+                            <p class="text-grey-dark mt-1 text-sm">
+                                Get Andrés on this movie ASAP!
+                            </p>
+                        </div>
+                    </div>
+                    <div class="bg-white px-3 flex items-center hover:bg-grey-lighter cursor-pointer">
+                        <div>
+                            <img class="h-12 w-12 rounded-full"
+                                src="https://www.biography.com/.image/t_share/MTE5NDg0MDU1MTIyMTE4MTU5/arnold-schwarzenegger-9476355-1-402.jpg" />
+                        </div>
+                        <div class="ml-4 flex-1 border-b border-grey-lighter py-4">
+                            <div class="flex items-bottom justify-between">
+                                <p class="text-grey-darkest">
+                                    Arnold Schwarzenegger
+                                </p>
+                                <p class="text-xs text-grey-darkest">
+                                    12:45 pm
+                                </p>
+                            </div>
+                            <p class="text-grey-dark mt-1 text-sm">
+                                I'll be back
+                            </p>
+                        </div>
+                    </div>
+                    <div class="bg-white px-3 flex items-center hover:bg-grey-lighter cursor-pointer">
+                        <div>
+                            <img class="h-12 w-12 rounded-full"
+                                src="https://www.famousbirthdays.com/headshots/russell-crowe-6.jpg" />
+                        </div>
+                        <div class="ml-4 flex-1 border-b border-grey-lighter py-4">
+                            <div class="flex items-bottom justify-between">
+                                <p class="text-grey-darkest">
+                                    Russell Crowe
+                                </p>
+                                <p class="text-xs text-grey-darkest">
+                                    12:45 pm
+                                </p>
+                            </div>
+                            <p class="text-grey-dark mt-1 text-sm">
+                                Hold the line!
+                            </p>
+                        </div>
+                    </div>
+                    <div class="bg-white px-3 flex items-center hover:bg-grey-lighter cursor-pointer">
+                        <div>
+                            <img class="h-12 w-12 rounded-full"
+                                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGpYTzuO0zLW7yadaq4jpOz2SbsX90okb24Z9GtEvK6Z9x2zS5" />
+                        </div>
+                        <div class="ml-4 flex-1 border-b border-grey-lighter py-4">
+                            <div class="flex items-bottom justify-between">
+                                <p class="text-grey-darkest">
+                                    Tom Cruise
+                                </p>
+                                <p class="text-xs text-grey-darkest">
+                                    12:45 pm
+                                </p>
+                            </div>
+                            <p class="text-grey-dark mt-1 text-sm">
+                                Show me the money!
+                            </p>
+                        </div>
+                    </div>
+                    <div class="bg-white px-3 flex items-center hover:bg-grey-lighter cursor-pointer">
+                        <div>
+                            <img class="h-12 w-12 rounded-full"
+                                src="https://www.biography.com/.image/t_share/MTE5NTU2MzE2MjE4MTY0NzQ3/harrison-ford-9298701-1-sized.jpg" />
+                        </div>
+                        <div class="ml-4 flex-1 border-b border-grey-lighter py-4">
+                            <div class="flex items-bottom justify-between">
+                                <p class="text-grey-darkest">
+                                    Harrison Ford
+                                </p>
+                                <p class="text-xs text-grey-darkest">
+                                    12:45 pm
+                                </p>
+                            </div>
+                            <p class="text-grey-dark mt-1 text-sm">
+                                Tell Java I have the money
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            
+            </div>
+
+        </div>
+    </body>
+    {{else}}
+
+    <!-- Login Component -->
+    <div class="bg-sky-100 flex justify-center items-center h-screen border-y-2 border-black">
+        <!-- Left: Image -->
+        <div class="w-1/2 h-screen hidden lg:block border-2 border-black">
+            <img src="/static/images/chat-app-main.jpg" alt="Placeholder Image" class="object-cover w-full h-full">
+        </div>
+        <!-- Right: Login Form -->
+        <div class="lg:p-36 md:p-52 sm:20 p-8 w-full lg:w-1/2">
+            <h1 class="text-2xl font-semibold mb-4">Login</h1>
+            <form action="#" method="POST">
+                <!-- Username Input -->
+                <div class="mb-4" "bg-sky-100">
+                    <label for="username" class="block text-gray-600">Username</label>
+                    <input type="text" id="username" name="username"
+                        class="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:border-blue-500"
+                        autocomplete="off">
+                </div>
+                <!-- Password Input -->
+                <div class="mb-4">
+                    <label for="password" class="block text-gray-800">Password</label>
+                    <input type="password" id="password" name="password"
+                        class="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:border-blue-500"
+                        autocomplete="off">
+                </div>
+                <!-- Remember Me Checkbox -->
+                <div class="mb-4 flex items-center">
+                    <input type="checkbox" id="remember" name="remember" class="text-red-500">
+                    <label for="remember" class="text-green-900 ml-2">Remember Me</label>
+                </div>
+                <!-- Forgot Password Link -->
+                <div class="mb-6 text-blue-500">
+                    <a href="#" class="hover:underline">Forgot Password?</a>
+                </div>
+                <!-- Login Button -->
+                <button type="submit"
+                    class="bg-red-500 hover:bg-blue-600 text-white font-semibold rounded-md py-2 px-4 w-full">Login</button>
+            </form>
+            <!-- Sign up  Link -->
+            <div class="mt-6 text-green-500 text-center">
+                <a href="#" class="hover:underline">Sign up Here</a>
+            </div>
+        </div>
+    </div>
+    {{/if}}
+</div>
+
+{{!-- Cliente socket.io para handlebars --}}
+<script src="/socket.io/socket.io.js"></script>
+
+{{!-- Archivos "js" enlazados a este documento --}}
+{{!-- Archivos "js" enlazados a este documento --}}
+<script src="/static/js/index.js"></script>

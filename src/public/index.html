@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App - Chat</title>
+</head>
+<body>
+    <nav>
+        <h3>Navbar</h3>
+    </nav>
+    <main>
+        <h1>Cuerpo principal</h1>
+    </main>
+    <section>
+        <form action="/images" method="post" enctype="multipart/form-data">
+            <input type="text" id="firstName" name="firstName">
+            <br />
+            <input type="text" id="lastName" name="lastName">
+            <br />
+            <!-- Importante: para que funcione el multer debemos colocar el " type: file " -->
+            <input type="file" id="testMulter" name="testMulter" multiple>
+            <br />
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+    <footer>
+        <h4>Esto es un footer</h4>
+    </footer>
+</body>
+</html>

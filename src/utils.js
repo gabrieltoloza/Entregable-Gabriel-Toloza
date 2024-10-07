@@ -1,5 +1,6 @@
 
 
+
 // Funcion para lograr id autoincremental.
 export const idController = (objectsArray) => {
     
@@ -22,3 +23,4 @@ export const idController = (objectsArray) => {
     }
 
 }
+

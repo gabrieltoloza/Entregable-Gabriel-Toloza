@@ -1,11 +1,13 @@
 import fs from 'fs';
-import { idController } from '../utils.js';
+import path from 'path';
+import { idController } from '../../utils.js';
+import { config } from '../../config.js';
 
 
 
 export class ProductManager {
 
-    static file = './db/products.json'
+    static file = `${config.DIRNAME}/src/db/products.json`
 
     static async init() {
         try{
@@ -58,7 +60,6 @@ export class ProductManager {
 
             await fs.promises.writeFile(this.file, JSON.stringify(result, null, 4))
             
-            console.log("Producto creado con exito")
             return await this.getProductById(newId)
 
         } catch (error) {
@@ -102,6 +103,7 @@ export class ProductManager {
             await fs.promises.writeFile(this.file, JSON.stringify(productsFiltered, null, 4))
             
             return { message: "Producto borrado del registro", deletedProduct: id }
+
         } catch (error) {
             return error
         }

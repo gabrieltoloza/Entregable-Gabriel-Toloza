@@ -1,6 +1,7 @@
 
 import fs from 'fs'
-import { idController } from '../utils.js'
+import path from 'path'
+import { idController } from '../../utils.js'
 import { ProductManager } from './ProductManajer.js'
 
 
@@ -8,7 +9,7 @@ import { ProductManager } from './ProductManajer.js'
 
 export class CartManager {
 
-    static file = './db/carts.json'
+    static file = path.resolve('src/db/carts.json')
 
     static async init(){
         try {

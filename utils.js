@@ -1,3 +1,6 @@
+import fs from 'fs'
+import { config } from './config.js';
+
 
 
 // Funcion para lograr id autoincremental.
@@ -22,3 +25,14 @@ export const idController = (objectsArray) => {
     }
 
 }
+
+
+const logPath = `${config.DIRNAME}/monitoring.log`;
+
+export function writeLog(message) {
+    const logMessage = `${new Date().toISOString()} -- ${message}\n`
+    fs.promises.appendFile(logPath, logMessage, (error) => {
+        if(error) console.error('Error escirbiendo en el archivo de logging: ', error)
+    }) 
+}
+

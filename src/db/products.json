@@ -141,5 +141,31 @@
             "./public/auricularesBluetooth.png"
         ],
         "status": true
+    },
+    {
+        "id": 16,
+        "title": "Funda Logitech",
+        "description": "Funda para laptop logitech de cuerina color bordo",
+        "code": "aik458",
+        "price": 45,
+        "stock": 70,
+        "category": "accesorios",
+        "thumbnails": [
+            "./public/fundalaptop.png"
+        ],
+        "status": true
+    },
+    {
+        "id": 17,
+        "title": "Stickers",
+        "description": "Stickers para personalizar setup",
+        "code": "77s584",
+        "price": 7,
+        "stock": 200,
+        "category": "accesorios",
+        "thumbnails": [
+            "./public/stickers.png"
+        ],
+        "status": true
     }
 ]

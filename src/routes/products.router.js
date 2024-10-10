@@ -9,6 +9,10 @@ const router = Router()
 
 router.get('/', ProductController.getProducts) //  --> GET 
 
+
+// Endpoint con WebSockets
+router.get('/realtimeproducts', ProductController.getProductsWebSocket) //   --> GET con WebSockets
+
 router.get('/:pid', ProductController.getProductsById) // --> GET by ID
 
 router.post('/', ProductController.addProduct) // --> POST

@@ -26,12 +26,13 @@ Content-Type: application/json
 
 {
     "title": "Cable HDMI",
-    "decription": "Cable HDMI, largo 1/2 metro color negro marca logitech",
+    "description": "Cable HDMI, largo 1/2 metro color negro marca logitech",
     "code": "stb789",
     "price": 20,
     "stock": 100, 
     "category": "accesorios"
 }
+
 ### MODIFICAR EL BODY PARA PROBARLO
 ### MODIFICAR EL BODY PARA PROBARLO
 ### MODIFICAR EL BODY PARA PROBARLO
@@ -56,7 +57,10 @@ Content-Type: application/json
 
 
 ### DELETE - Borrar producto
-DELETE http://127.0.0.1:8080/api/products/11
+DELETE http://127.0.0.1:8080/api/products/18
 
 ### MODIFICAR EL "params" PARA PROBARLO
 ### MODIFICAR EL "params" PARA PROBARLO
+
+
+

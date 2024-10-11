@@ -81,6 +81,12 @@ socketClient.on('deleted_product', data => {
 })
 
 
+socketClient.on('put_products', data => {
+    renderUpdateProducts(data)
+    socketClient.emit('success_update_product', 'Se ha actualizado un producto del registro')
+})
+
+
 
 function renderUpdateProducts(objectArray){
     containerList.innerHTML = '';

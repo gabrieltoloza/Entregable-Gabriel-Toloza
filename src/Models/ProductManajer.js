@@ -19,6 +19,7 @@ export class ProductManager {
         }
     }
 
+
     static async #readJsonProducts() {
         const result = await fs.promises.readFile(this.file, 'utf-8')
 
@@ -26,9 +27,11 @@ export class ProductManager {
     }
 
 
+
     static async getProducts() {
         return await this.#readJsonProducts()
     }
+
 
 
     static async getProductById(id){
@@ -45,6 +48,7 @@ export class ProductManager {
     }
 
 
+    
     static async addProduct(product) {
         try {
 
@@ -71,9 +75,9 @@ export class ProductManager {
     static async updateProduct(product) {
         try {
             const result = await this.getProducts()
-            console.log(product)
+            
             const productIndex = result.findIndex(obj => obj["id"] === product.id)
-            console.log(productIndex)
+            
             if(productIndex < 0) throw new Error("Producto no encontrado!!")
             
             const productFound = result[productIndex]

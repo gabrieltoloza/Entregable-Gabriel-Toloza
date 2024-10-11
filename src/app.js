@@ -34,6 +34,10 @@ socketServer.on('connection', (socket) => {
         writeLog(`${message} - ID del cliente: ${socket.id}`)
     });
 
+    socket.on('success_update_product', message => {
+        writeLog(`${message} - ID del cliente: ${socket.id}`)
+    })
+
     socket.on('success_deleted_product', message => {
         writeLog(`${message} - ID del cliente: ${socket.id}`)
     });
@@ -67,6 +71,7 @@ app.use(express.urlencoded({extended: true}))
 app.use('/api/carts', cartsRouter)
 
 app.use('/api/products', productRouter)
+
 
 
 

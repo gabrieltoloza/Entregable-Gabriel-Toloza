@@ -21,12 +21,12 @@ export class ProductController{
             const { start, limit } = query;
             const paginationProducts = result.splice(Number(start), Number(limit))
             if(paginationProducts.length < 1) return res.status(202).render({ message: "No hay mas productos! :("})
-            return res.status(200).json(paginationProducts)
+            return res.status(200).render('products',{ products: paginationProducts})
         } else if (Object.keys(query).length === 1) {
             const { category } = query
             const filtered = result.filter(obj => obj["category"] === category.toLowerCase())
             if(filtered.length < 1) return res.status(404).json({ message: "No se encontraron productos con esa categoria"})
-            return res.status(200).json(filtered)
+            return res.status(200).render('products', { products: filtered})
             
         }
         
@@ -51,12 +51,12 @@ export class ProductController{
             const { start, limit } = query;
             const paginationProducts = result.splice(Number(start), Number(limit))
             if(paginationProducts.length < 1) return res.status(202).render({ message: "No hay mas productos! :("})
-            return res.status(200).render(paginationProducts)
+                return res.status(200).render('products',{ products: paginationProducts})
         } else if (Object.keys(query).length === 1) {
             const { category } = query
             const filtered = result.filter(obj => obj["category"] === category.toLowerCase())
             if(filtered.length < 1) return res.status(404).json({ message: "No se encontraron productos con esa categoria"})
-            return res.status(200).render(filtered)
+                return res.status(200).render('products', { products: filtered})
             
         }
     
@@ -108,35 +108,42 @@ export class ProductController{
 
     static async updateProduct(req, res) {
 
-            const id = Number(req.params.pid)
-            const reqBody = req.body
-            const body = {id, ...reqBody}
-            
-            const result = await ProductManager.updateProduct(body)
-            
-            if(result instanceof Error) return res.status(404).json({ message: result.message })
-            
-            return res.status(200).json(result)
+        const socketServer = req.app.get('socketServer')
+
+        const id = Number(req.params.pid)
+        const reqBody = req.body
+        const body = {id, ...reqBody}
+        
+        const result = await ProductManager.updateProduct(body)
+        
+        if(result instanceof Error) return res.status(404).json({ message: result.message })
+        
+        const newListProducts = await ProductManager.getProducts()
+
+        socketServer.emit('put_products', newListProducts)
+
+        return res.status(200).json(result)
+
     }
 
 
 
     static async deleteProduct(req, res) {
             
-            const socketServer = req.app.get('socketServer')    
+        const socketServer = req.app.get('socketServer')    
 
-            const id = req.params.pid
+        const id = req.params.pid
 
-            const result = await ProductManager.deleteProduct(Number(id))
+        const result = await ProductManager.deleteProduct(Number(id))
 
-            if(result instanceof Error) return res.status(500).json({ message: result.message})
-    
+        if(result instanceof Error) return res.status(500).json({ message: result.message})
 
-            const newListProducts = await ProductManager.getProducts()
-            
-            socketServer.emit('deleted_product', newListProducts)
 
-            return res.status(200).json(result);
+        const newListProducts = await ProductManager.getProducts()
+        
+        socketServer.emit('deleted_product', newListProducts)
+
+        return res.status(200).json(result);
 
     }
 
